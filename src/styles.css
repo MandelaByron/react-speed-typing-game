@@ -1,0 +1,38 @@
+body {
+  font-family: sans-serif;
+  font-weight: 400;
+  text-align: center;
+  background: azure;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+textarea {
+  border: 3px solid black;
+  width: 90%;
+  margin: 0 auto;
+  outline: none;
+  height: 200px;
+  padding: 10px;
+}
+
+textarea:disabled {
+  background-color: #a5a2a2;
+}
