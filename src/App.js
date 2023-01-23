@@ -1,5 +1,5 @@
 import "./styles.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 export default function App() {
   const START_TIME = 15;
@@ -8,6 +8,7 @@ export default function App() {
   const [isTimeRunning, setTimeRunning] = useState(false);
   const [timeRemaining, setTime] = useState(START_TIME);
   const [words, setWordCount] = useState(0);
+  const textRef = useRef(null);
 
   function handleChange(event) {
     const { value } = event.target;
@@ -33,6 +34,8 @@ export default function App() {
     setTimeRunning(true);
     setTime(START_TIME);
     setText("");
+    textRef.current.disabled = false;
+    textRef.current.focus();
   }
 
   function end() {
@@ -44,6 +47,7 @@ export default function App() {
     <div className="App">
       <h1>How fast do you type? </h1>
       <textarea
+        ref={textRef}
         onChange={handleChange}
         value={text}
         disabled={!isTimeRunning}
